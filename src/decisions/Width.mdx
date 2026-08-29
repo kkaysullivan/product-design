@@ -1,0 +1,31 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as WidthStories from './Width.stories';
+
+<Meta of={WidthStories} />
+
+# Width
+
+## SPA
+
+- Must use a 12-grid layout for the desktop version.
+- **Intake page forms** — 1 column, must not exceed 800px on desktop.
+
+<Canvas of={WidthStories.SpaOneColumn} />
+
+- If 2 column, use best judgement for the width of each column to fit
+  within the 12-grid layout.
+
+<Canvas of={WidthStories.SpaTwoColumn} />
+
+- **Results pages only** (not intake) — content area caps at 800px.
+  Content never stretches wider.
+
+<Canvas of={WidthStories.SpaResultsCap} />
+
+## Modular
+
+- Must be fluid based on location of placement (e.g. landing page, blog
+  articles).
+- Minimum width accounted for is 320px, with a maximum width of 600px.
+
+<Canvas of={WidthStories.ModularFluid} />

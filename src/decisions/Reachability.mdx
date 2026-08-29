@@ -1,0 +1,29 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as ReachabilityStories from './Reachability.stories';
+
+<Meta of={ReachabilityStories} />
+
+# Reachability
+
+_Mobile and Modular experiences only._
+
+<Canvas of={ReachabilityStories.HowUsersHold} />
+
+## Splash
+
+Content, and CTAs on splash, sit lower toward the thumbs for easier reach.
+
+<Canvas of={ReachabilityStories.ThumbZoneSplash} />
+
+## Intake
+
+This holds as-is throughout the intake flow — no change from splash.
+
+<Canvas of={ReachabilityStories.ThumbZoneIntake} />
+
+## Results & dashboard
+
+<Canvas of={ReachabilityStories.ThumbZoneResultsDashboard} />
+
+**Note:** Desktop is not relevant here — use
+<a href="https://lawsofux.com/fittss-law/" target="_blank" rel="noreferrer">Fitt's Law</a> instead.

@@ -1,0 +1,31 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as PageTypesStories from './PageTypes.stories';
+
+<Meta of={PageTypesStories} />
+
+# Page Types
+
+Every page type in the funnel has its own purpose, and its own decisions.
+**Everything below applies to Intake pages only.** As Intro, Dashboard,
+Results, and Splash pages get their own decisions, they'll get their own
+sections on this page.
+
+## Intake
+
+Form intake is for collecting data points, asking for feedback, and
+contains interaction. This is the most constrained page.
+
+### Hierarchy
+
+Hierarchy holds — the page scans in under 5 seconds. No change from what's
+already established.
+
+### Customer love
+
+- Intake is the functional screen (low delight).
+- Emotional design is dialed down on purpose.
+- Deep delight could be added by hiding fields we already have the user's
+  info for.
+
+<Canvas of={PageTypesStories.IntakeSpa} />
+<Canvas of={PageTypesStories.IntakeModular} />

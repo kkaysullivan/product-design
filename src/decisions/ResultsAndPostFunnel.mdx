@@ -1,0 +1,26 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as ResultsAndPostFunnelStories from './ResultsAndPostFunnel.stories';
+
+<Meta of={ResultsAndPostFunnelStories} />
+
+# Results & Post Funnel
+
+- Results and post funnel pages must load in a SPA experience. No
+  exceptions.
+
+<Canvas of={ResultsAndPostFunnelStories.SpaOnly} />
+
+- Results and dashboards are a completely separate rule set. No action bar.
+  Different layout logic.
+
+<Canvas of={ResultsAndPostFunnelStories.SeparateRuleSet} />
+
+- All pro connection and service results land inside Ramsey Connect, never
+  a standalone page on RamseySolutions.com.
+
+<Canvas of={ResultsAndPostFunnelStories.ProConnectRouting} />
+
+- The loader while results generate is the transition into results. Don't
+  stack a second transition on top of it.
+
+<Canvas of={ResultsAndPostFunnelStories.LoaderTransition} />

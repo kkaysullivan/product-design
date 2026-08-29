@@ -1,0 +1,40 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as BackgroundAndContainersStories from './BackgroundAndContainers.stories';
+
+<Meta of={BackgroundAndContainersStories} />
+
+# Background & Containers
+
+- White background boxes hold content.
+- Never call them "cards."
+- Don't mix boxed content with bare content in the same experience.
+- The content area is not the same as the container that houses it.
+
+## SPA
+
+- Do not use background boxes to hold content. Content floats, on light
+  backgrounds only.
+- Do not use dark backgrounds.
+
+<Canvas of={BackgroundAndContainersStories.SpaFloating} />
+
+## Modular
+
+- Must use background boxes to hold content. Intake keeps content in boxes
+  only — no floating on the background. Boxes let brand peek through for
+  cohesion.
+- Splash and results pages may float content on the background.
+
+<Canvas of={BackgroundAndContainersStories.ModularBoxed} />
+
+## Dark or saturated backgrounds
+
+Reserved for key emotional moments only. Overuse makes them meaningless,
+and when used, live text must stay accessible.
+
+<Canvas of={BackgroundAndContainersStories.EmotionalMoment} />
+
+## Brand treatment
+
+Subtle brush strokes are fine. Nothing loud, nothing that competes with
+the task.

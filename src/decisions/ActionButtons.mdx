@@ -1,0 +1,42 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as ActionButtonsStories from './ActionButtons.stories';
+
+<Meta of={ActionButtonsStories} />
+
+# Action Buttons
+
+Covers get-started, sign-in, and sign-up screens where the action sits
+directly below stacked form fields.
+
+**Industry pattern:** most intake forms place the action nav below the
+main content area, primary on the right, tertiary on the left — usually a
+solid primary button and a tertiary with a left arrow icon.
+
+## SPA
+
+### Desktop
+
+- The action bar is stuck to the bottom of the browser window, but its
+  width matches the content area of the page — not the full browser
+  window. See
+  [Decisions/Navigation and Progress](?path=/docs/decisions-navigation-and-progress--docs)
+  for the stable-action-bar decision.
+- Primary is always on the right, flush with the right edge of the content
+  area.
+- Tertiary is always on the left, flush with the left edge of the content
+  area, styled as a **subtle button** — no border, no box.
+- Intake pages specifically: the action bar's width is set by the main
+  content area of the form.
+- Do not flush the actions right or left of the entire browser window —
+  they become harder to locate. We adhere to
+  <a href="https://lawsofux.com/fittss-law/" target="_blank" rel="noreferrer">Fitt's Law</a>.
+
+<Canvas of={ActionButtonsStories.SpaDesktop} />
+
+## Modular
+
+Already decided: primary button sits directly below content, inside the
+background content box. Tertiary sits directly below the primary, styled
+as a **subtle button** — no border, no box.
+
+<Canvas of={ActionButtonsStories.Modular} />

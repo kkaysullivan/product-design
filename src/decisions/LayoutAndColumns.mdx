@@ -1,0 +1,32 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as LayoutAndColumnsStories from './LayoutAndColumns.stories';
+
+<Meta of={LayoutAndColumnsStories} />
+
+# Layout & Columns
+
+All columns live above a stable action bar.
+
+## Intake form pages
+
+Always 1-column. No exceptions — SPA or Modular, mobile or desktop. This
+is the defining intake rule: because the page is gathering input, it stays
+single-column. Most important info sits at top, less important info stacks
+below.
+
+<Canvas of={LayoutAndColumnsStories.IntakeOneColumn} />
+
+## Splash and intro pages
+
+- **SPA desktop** — can flex between 1-column and 2-column. Left column
+  should always be a form. Right content should be contextual.
+- All other cases — 1 column.
+
+<Canvas of={LayoutAndColumnsStories.SplashTwoColumn} />
+
+## Modular desktop
+
+Not applicable. Modular always defaults to mobile sizing and treatment —
+there is no distinct desktop layout.
+
+<Canvas of={LayoutAndColumnsStories.ModularDesktopNotApplicable} />

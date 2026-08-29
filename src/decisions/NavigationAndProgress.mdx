@@ -1,0 +1,57 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as NavigationAndProgressStories from './NavigationAndProgress.stories';
+
+<Meta of={NavigationAndProgressStories} />
+
+# Navigation & Progress
+
+Locked decisions covering intake, splash, and results pages.
+
+## Progress bar
+
+Must have a progress bar in the intake flow.
+
+- **SPA** — mobile and desktop, sits above the main content area, matching
+  the width of the content container. Not inside the content box itself.
+- **Modular** — mobile and desktop, sits at the very top of the background
+  content box, directly above the main content.
+- Top chevron next to the progress bar — not used on SPA desktop. Available
+  for Modular.
+- Main directional progress bars use the Ramsey primary brand color.
+
+<Canvas of={NavigationAndProgressStories.ProgressBarSpa} />
+<Canvas of={NavigationAndProgressStories.ProgressBarModular} />
+
+## Header & nav
+
+**SPA**
+
+- Intake and splash — narrow header, no global nav, focused task nav only.
+  No layout or nav variation once a user is inside the funnel.
+- Results — header can expand. Desktop uses a side experience nav, no
+  global nav, with a Ramsey logo to go back.
+
+<Canvas of={NavigationAndProgressStories.HeaderSpaIntake} />
+<Canvas of={NavigationAndProgressStories.HeaderSpaResults} />
+
+**Modular**
+
+- Intake and splash — no global nav. Must use narrow header to indicate
+  what experience the user is in.
+- Results — not applicable. All results experiences must open in a SPA
+  environment (see
+  [Decisions/Results and Post Funnel](?path=/docs/decisions-results-and-post-funnel--docs)).
+
+<Canvas of={NavigationAndProgressStories.HeaderModular} />
+
+## Action bar & buttons
+
+- Stable action bar, stuck to the bottom.
+- **SPA desktop** — bar width matches the content area, not the full
+  browser window. See
+  [Decisions/Action Buttons](?path=/docs/decisions-action-buttons--docs)
+  for alignment specifics.
+- **Continue** is the primary label button.
+- **Back** is the tertiary label button.
+- On mobile only, if the progress bar already shows the back chevron, the
+  tertiary Back button underneath primary is optional.

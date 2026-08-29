@@ -1,0 +1,43 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as ExperienceTypesStories from './ExperienceTypes.stories';
+
+<Meta of={ExperienceTypesStories} />
+
+# Experience Types
+
+Every intake experience falls into one of two types. Tag decisions with the
+relevant type below (`SPA` and/or `Modular`) so they can be filtered by
+experience type from the Storybook sidebar.
+
+## SPA
+
+A standalone intake experience that loads on its own dedicated page. The team
+controls the full layout environment.
+
+**Reality check:** There are 1-2 RamseyTrusted verticals that are doing this
+already.
+
+<Canvas of={ExperienceTypesStories.SpaExample} />
+
+## Modular
+
+A componentized intake that can be embedded inline on any page within the
+Ramsey ecosystem. The surrounding page context is variable and outside the
+team's control.
+
+**Reality check:** These still exist across RamseyTrusted.
+
+<Canvas of={ExperienceTypesStories.ModularExample} />
+
+## Tagging a decision
+
+Add the matching tag(s) to a decision's story/doc export:
+
+```ts
+export default {
+  title: 'Decisions/My Decision',
+  tags: ['SPA'], // or ['Modular'], or both if the decision applies to either
+};
+```
+
+Tagged entries appear under the tag filter in the sidebar toolbar.

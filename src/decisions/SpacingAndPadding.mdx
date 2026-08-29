@@ -1,0 +1,27 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as SpacingAndPaddingStories from './SpacingAndPadding.stories';
+
+<Meta of={SpacingAndPaddingStories} />
+
+# Spacing & Padding
+
+One main-body padding value, applied across the whole experience, in
+increments of 8px. The same value is used for padding within the content
+area.
+
+## SPA
+
+- **Mobile** — 3 options only: 8px, 16px, or 24px. 16px and 24px are the
+  most common.
+- **Desktop** — 13 options only, in 8px steps: 32, 40, 48, 56, 64, 72, 80,
+  88, 96, 104, 112, 120, or 128px. 32px and 48px are the most common.
+
+<Canvas of={SpacingAndPaddingStories.SpaMobile} />
+<Canvas of={SpacingAndPaddingStories.SpaDesktop} />
+
+## Modular
+
+- **Mobile and desktop** — 3 options only: 8px, 16px, or 24px, same at
+  every breakpoint.
+
+<Canvas of={SpacingAndPaddingStories.Modular} />

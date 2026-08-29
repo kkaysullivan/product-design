@@ -1,0 +1,32 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as MotionStories from './Motion.stories';
+
+<Meta of={MotionStories} />
+
+# Motion
+
+Transitions stay subtle throughout the intake flow.
+
+## Entry transition
+
+- **SPA only** — big transition once, at entry. Dark-to-light coming from
+  RS.com into the experience. Everything inside stays subtle.
+- **Modular only** — no big transitions. Keep motion at a minimum, except
+  for special screens.
+
+<Canvas of={MotionStories.EntrySpa} />
+<Canvas of={MotionStories.EntryModular} />
+
+## Easing
+
+One easing curve for everything. The Ramsey ease curve already running in
+the portal is the standard.
+
+<Canvas of={MotionStories.Easing} />
+
+## Continuity
+
+Animated elements carry context page to page. Logos and content blocks move
+with you so it reads as continuity, not a flip.
+
+<Canvas of={MotionStories.Continuity} />

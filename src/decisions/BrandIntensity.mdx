@@ -1,0 +1,87 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as BrandIntensityStories from './BrandIntensity.stories';
+
+<Meta of={BrandIntensityStories} />
+
+# Brand Intensity
+
+Two independent questions decide how loud the brand gets on any screen —
+not one.
+
+- **Bandwidth** — does the user have spare attention right now? Low means
+  mid-task, focused, repetitive. High means the task is paused or just
+  finished.
+- **Stakes** — is this moment emotionally loaded? Low means routine, low
+  emotion. High means a big win or bad news — either way, it matters.
+
+## High stakes + low bandwidth — highest-risk quadrant
+
+Recede visually. Dial warmth up in copy.
+
+e.g. reviewing a denial, a number that scares the user.
+
+Don't soften bad news with decoration — soften it with direct, empathetic
+language. Ambient texture is still OK (see the test below).
+
+<Canvas of={BrandIntensityStories.HighestRisk} />
+
+## High stakes + high bandwidth — signature-moment territory
+
+Celebrate the win, out loud.
+
+e.g. debt paid off, the debt-free scream, a milestone hit.
+
+This is where 1-2 signature interactions should live, not scattered
+everywhere.
+
+<Canvas of={BrandIntensityStories.SignatureMoment} />
+
+## Low stakes + low bandwidth
+
+Recede + plain tone.
+
+e.g. updating an address.
+
+Design-system tokens only — no illustration, no custom motion. Ambient
+texture is still OK (see the test below).
+
+<Canvas of={BrandIntensityStories.PlainTone} />
+
+## Low stakes + high bandwidth
+
+Light presence, optional.
+
+e.g. browsing options. Some personality is welcome.
+
+<Canvas of={BrandIntensityStories.LightPresence} />
+
+## The ambient texture test
+
+"Recede" ≠ zero brand. A quiet background wash or brush-stroke texture can
+stay in any quadrant — even the low-bandwidth ones — if it passes every
+check below:
+
+1. **Is it passive** — no motion, no animation.
+2. **Is it background only** — sits behind content, never becomes the focal
+   point.
+3. **Is it from the design system** — an approved token/pattern, not a
+   one-off asset.
+
+Fails any one of these → it's not ambient anymore, it's active decoration.
+That only belongs in the signature-moment box.
+
+## Sources
+
+Each source grounds its own piece of the model, not the pairing as a whole.
+
+- **Bandwidth axis** — NN/g, "Minimize Cognitive Load to Maximize
+  Usability": decorative elements measurably slow users down when
+  processing capacity is already spent on the task.
+- **High-bandwidth / resolved-stakes cell (signature moments)** — the
+  Peak-End Rule (Kahneman, via Laws of UX): people judge an experience
+  mainly by its peak and its ending, which is why milestone/completion
+  moments are the highest-leverage spot for a branded payoff.
+- **High-stakes cell (recede + dial up warmth)** — constructive,
+  "Designing for Stress," and trauma-informed content design literature
+  (UX Content Collective): both argue for clean layouts and plain,
+  empathetic language under stress.
