@@ -15,7 +15,7 @@ const good = '#3f8a5b';
 
 const meta = {
   title: 'Decisions/Results and Post Funnel',
-  tags: ['SPA', 'Modular'],
+  tags: ['SPA', 'Hybrid'],
 } satisfies Meta;
 
 export default meta;

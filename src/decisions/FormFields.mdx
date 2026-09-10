@@ -1,0 +1,21 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as FormFieldsStories from './FormFields.stories';
+
+<Meta of={FormFieldsStories} />
+
+# Form Fields
+
+## Modular
+
+- Large single-select option sets should collapse. When a question has
+  roughly five or more options, use a dropdown rather than listing every
+  option out and letting the container grow dramatically down the page.
+
+<Canvas of={FormFieldsStories.LongListGrows} />
+<Canvas of={FormFieldsStories.CollapsesToDropdown} />
+
+**Not addressed here:** whether the same five-option threshold should
+apply on SPA. The reasoning behind this decision is specifically about
+the Modular container's height inside a host page — a full-page SPA
+layout doesn't share that constraint, so this doesn't carry over
+automatically.

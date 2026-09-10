@@ -14,7 +14,7 @@ const line = '#8a8a8a';
 
 const meta = {
   title: 'Foundations/Experience Types',
-  tags: ['SPA', 'Modular'],
+  tags: ['SPA', 'Modular', 'Hybrid'],
 } satisfies Meta;
 
 export default meta;
@@ -168,6 +168,47 @@ export const ModularExample: Story = {
         The calculator is one boxed component inside a page it doesn't
         control — TOC sidebar, article copy, and a promo rail all sit
         outside the team's ownership.
+      </Callout>
+    </>
+  ),
+};
+
+export const HybridExample: Story = {
+  name: 'Modular → SPA — handoff at results',
+  render: () => (
+    <>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
+        <Frame label="Modular — embedded intake" width={280}>
+          <div style={{ padding: 16 }}>
+            <ContentBox>
+              <FieldLine height={16} width="70%" />
+              <CheckboxRow width="60%" />
+              <CheckboxRow width="65%" />
+              <WireButton variant="primary" full>
+                See Your Results
+              </WireButton>
+            </ContentBox>
+          </div>
+        </Frame>
+
+        <span style={{ fontSize: 22, color: line, flexShrink: 0 }} aria-hidden="true">
+          →
+        </span>
+
+        <Frame label="SPA — dedicated results page" width={280}>
+          <HeaderBar label="Expanded header — logo only" />
+          <div style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 12 }}>
+            <FieldLine height={20} width="60%" />
+            <FieldLine height={10} width="80%" />
+            <FieldLine height={10} width="70%" />
+          </div>
+        </Frame>
+      </div>
+      <Callout>
+        The flow starts Modular, embedded in a host page. Submitting the
+        form hands off into a dedicated SPA for results — the handoff
+        itself is the hybrid decision; each side still follows its own
+        type's rules.
       </Callout>
     </>
   ),

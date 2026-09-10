@@ -5,8 +5,14 @@ import * as ResultsAndPostFunnelStories from './ResultsAndPostFunnel.stories';
 
 # Results & Post Funnel
 
+This is the Modular → SPA hybrid decision — see
+[Foundations/Experience Types](?path=/docs/foundations-experience-types--docs).
+Results never live in Modular; a Modular intake always hands off into a
+SPA at this point.
+
 - Results and post funnel pages must load in a SPA experience. No
-  exceptions.
+  exceptions, regardless of whether the intake before it was SPA or
+  Modular.
 
 <Canvas of={ResultsAndPostFunnelStories.SpaOnly} />
 

@@ -5,16 +5,22 @@ import * as BackgroundAndContainersStories from './BackgroundAndContainers.stori
 
 # Background & Containers
 
-- White background boxes hold content.
-- Never call them "cards."
-- Don't mix boxed content with bare content in the same experience.
+- Whenever a background box is used to hold content, never call it a
+  "card."
 - The content area is not the same as the container that houses it.
 
 ## SPA
 
-- Do not use background boxes to hold content. Content floats, on light
-  backgrounds only.
+- Intake experiences do not use background boxes. Form content floats
+  directly on the page.
+- Stay on one treatment for the whole intake flow — don't move between
+  boxed and unboxed as the user progresses.
+- Because content floats with no box to set it apart, background contrast
+  is what has to carry legibility. This is why light backgrounds only
+  (below) isn't optional.
 - Do not use dark backgrounds.
+- Nothing to mix here — there's no boxed option on SPA, so this doesn't
+  apply.
 
 <Canvas of={BackgroundAndContainersStories.SpaFloating} />
 
@@ -23,14 +29,39 @@ import * as BackgroundAndContainersStories from './BackgroundAndContainers.stori
 - Must use background boxes to hold content. Intake keeps content in boxes
   only — no floating on the background. Boxes let brand peek through for
   cohesion.
+- The container's job is separation: a Modular experience lives inside
+  whatever page it's embedded in, so the box is what visually distinguishes
+  the form from the host page's surrounding content.
 - Splash and results pages may float content on the background.
+- Don't mix boxed and bare content within the same screen — each screen
+  commits to one or the other.
+
+**Not yet decided:** the container may eventually need both light and dark
+treatments, depending on the host page it's embedded in. Today there's
+only the one (light) container — don't build a dark variant until this is
+locked.
 
 <Canvas of={BackgroundAndContainersStories.ModularBoxed} />
 
+## Modular → SPA (hybrid)
+
+- Modular intake stays boxed right up to the handoff. Once the SPA opens
+  for results, it follows the SPA rule above — content floats, no boxes.
+  Don't carry the Modular box across the handoff.
+
 ## Dark or saturated backgrounds
 
-Reserved for key emotional moments only. Overuse makes them meaningless,
-and when used, live text must stay accessible.
+Not the default intake treatment. The broader direction stays toward
+simpler, lighter intake experiences — stronger visual treatments are
+reserved for moments with a specific purpose, not applied throughout the
+flow.
+
+- Reserved for key emotional moments only. Overuse makes them meaningless,
+  and when used, live text must stay accessible.
+- Same direction as low-brand intake overall — see
+  [Decisions/Page Types](?path=/docs/decisions-page-types--docs) (Brand)
+  and the low-bandwidth end of
+  [Decisions/Brand Intensity](?path=/docs/decisions-brand-intensity--docs).
 
 <Canvas of={BackgroundAndContainersStories.EmotionalMoment} />
 

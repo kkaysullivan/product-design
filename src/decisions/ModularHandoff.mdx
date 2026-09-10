@@ -1,0 +1,61 @@
+import { Canvas, Meta } from '@storybook/addon-docs/blocks';
+import * as ModularHandoffStories from './ModularHandoff.stories';
+
+<Meta of={ModularHandoffStories} />
+
+# Modular Handoff
+
+Long intake/referral experiences should not live inside articles. Two
+independent triggers move a Modular experience into a focused SPA —
+either one is enough on its own.
+
+## Trigger: step count
+
+- 1 step — stays inline. A single question that resolves in place is fine
+  to complete right where it's embedded.
+- 2+ steps — hand off. If a Modular intake/referral experience has more
+  than one step, move the customer into a focused SPA rather than
+  completing the full flow inside the article.
+- The embedded piece becomes a lightweight launcher into the SPA, not a
+  stepper that runs to completion — the same pattern Real Estate already
+  uses.
+
+<Canvas of={ModularHandoffStories.SingleStepInline} />
+<Canvas of={ModularHandoffStories.MultiStepNotAllowed} />
+
+## Trigger: assessments
+
+- Assessments always hand off, independent of step count — even a
+  single-question assessment moves. The reason is different from the
+  step-count trigger: assessments ask for attention and potentially
+  thoughtful or stressful answers, and shouldn't have to compete with
+  everything else happening on an article or landing page.
+
+<Canvas of={ModularHandoffStories.AssessmentTrigger} />
+
+## Out of scope: tools
+
+- Calculators and other lightweight tools are explicitly excluded from
+  both triggers above. They can still make sense as embedded, Modular
+  experiences — regardless of step count — because a customer's intent
+  and interaction model with a tool is different from an
+  intake/referral/assessment flow.
+- Tools can continue to behave differently. This isn't an oversight — it's
+  a deliberate carve-out, not a gap to close later.
+
+<Canvas of={ModularHandoffStories.ToolsException} />
+
+## Modular → SPA (hybrid)
+
+- The launcher is the handoff point: one lightweight step (or a single
+  "Get Started" action) inside the article, then straight into a SPA for
+  the remaining steps. See
+  [Foundations/Experience Types](?path=/docs/foundations-experience-types--docs).
+
+<Canvas of={ModularHandoffStories.LauncherPattern} />
+
+## History
+
+The team first discussed a 5-question threshold, then moved to a simpler,
+stronger rule: any intake/referral experience with more than one step
+hands off, regardless of exactly how many questions it has.

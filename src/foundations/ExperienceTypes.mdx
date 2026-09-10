@@ -5,9 +5,18 @@ import * as ExperienceTypesStories from './ExperienceTypes.stories';
 
 # Experience Types
 
-Every intake experience falls into one of two types. Tag decisions with the
-relevant type below (`SPA` and/or `Modular`) so they can be filtered by
-experience type from the Storybook sidebar.
+Every intake experience falls into one of three types. Tag decisions with
+the relevant type(s) below (`SPA`, `Modular`, and/or `Hybrid`) so they can
+be filtered by experience type from the Storybook sidebar.
+
+## Locked decision: always distinguish SPA from Modular
+
+Going forward, a decision may not state a single rule and leave experience
+type as an afterthought. Every decision must say explicitly how it applies
+to SPA, to Modular, and to the Modular → SPA hybrid — including saying "the
+same on all three" when that's genuinely true. A rule written as if
+experience type doesn't matter is treated as incomplete, not as a
+universal rule.
 
 ## SPA
 
@@ -29,6 +38,24 @@ team's control.
 
 <Canvas of={ExperienceTypesStories.ModularExample} />
 
+## Modular → SPA (hybrid)
+
+A Modular experience that starts embedded on a host page, then hands off
+to a dedicated SPA later in the same flow — most commonly at results. The
+handoff point itself is where hybrid-specific decisions live; screens
+before the handoff still follow Modular rules, and screens after it still
+follow SPA rules.
+
+**Reality check:** This is already how results work today — every
+Modular intake ends by opening results in a SPA. See
+[Decisions/Results and Post Funnel](?path=/docs/decisions-results-and-post-funnel--docs).
+The same handoff now also applies mid-flow: any Modular intake/referral
+experience with more than one step launches into a SPA rather than
+running to completion inline. See
+[Decisions/Modular Handoff](?path=/docs/decisions-modular-handoff--docs).
+
+<Canvas of={ExperienceTypesStories.HybridExample} />
+
 ## Tagging a decision
 
 Add the matching tag(s) to a decision's story/doc export:
@@ -36,8 +63,11 @@ Add the matching tag(s) to a decision's story/doc export:
 ```ts
 export default {
   title: 'Decisions/My Decision',
-  tags: ['SPA'], // or ['Modular'], or both if the decision applies to either
+  tags: ['SPA'], // or ['Modular'], or ['Hybrid'], or any combination that
+                 // matches where the decision actually applies
 };
 ```
 
-Tagged entries appear under the tag filter in the sidebar toolbar.
+Don't default to tagging every decision with all three — tag only the
+type(s) the decision's content actually addresses. Tagged entries appear
+under the tag filter in the sidebar toolbar.

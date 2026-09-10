@@ -10,7 +10,7 @@ import {
 
 const meta = {
   title: 'Decisions/Background and Containers',
-  tags: ['SPA', 'Modular'],
+  tags: ['SPA', 'Modular', 'Hybrid'],
 } satisfies Meta;
 
 export default meta;
