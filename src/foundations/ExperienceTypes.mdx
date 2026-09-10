@@ -55,19 +55,3 @@ running to completion inline. See
 [Decisions/Modular Handoff](?path=/docs/decisions-modular-handoff--docs).
 
 <Canvas of={ExperienceTypesStories.HybridExample} />
-
-## Tagging a decision
-
-Add the matching tag(s) to a decision's story/doc export:
-
-```ts
-export default {
-  title: 'Decisions/My Decision',
-  tags: ['SPA'], // or ['Modular'], or ['Hybrid'], or any combination that
-                 // matches where the decision actually applies
-};
-```
-
-Don't default to tagging every decision with all three — tag only the
-type(s) the decision's content actually addresses. Tagged entries appear
-under the tag filter in the sidebar toolbar.
